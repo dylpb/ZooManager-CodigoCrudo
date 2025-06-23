@@ -10,7 +10,7 @@ import java.time.LocalDate;
  *
  * @author Dylan
  */
-public class Employee {
+public abstract class Employee {
     
     protected int id;
     protected String name;
@@ -49,11 +49,12 @@ public class Employee {
     public Employee(int id, String name, LocalDate birth, String phone, String salary) {
         this.id = id;
         this.name = name;
+        this.salary = salary;
     if (!birth.isAfter(LocalDate.now()))
         this.birth = birth;
     if (phone.matches("^\\\\d{2}-\\\\d{2}-\\\\d{2}-\\\\d{2}$"))
         this.phone = phone;
-        this.salary = salary;
+        
     }
 
     @Override
